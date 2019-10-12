@@ -1,0 +1,27 @@
+{
+  "name": "realtime-polls",
+  "version": "1.0.0",
+  "description": "Code for realtime polls",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/midudev/realtime-polls.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/midudev/realtime-polls/issues"
+  },
+  "homepage": "https://github.com/midudev/realtime-polls#readme",
+  "dependencies": {
+    "next": "9.1.1",
+    "react": "16.10.2",
+    "react-dom": "16.10.2"
+  }
+}
