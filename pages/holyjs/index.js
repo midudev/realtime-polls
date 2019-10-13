@@ -19,14 +19,17 @@ export default function () {
   })
 
   useEffect(function () {
-    const interval = setInterval(function () {
+    function getResults () {
       window.fetch('/api/poll')
         .then(res => res.json())
         .then(response => {
           setVotes(response)
         })
-    }, 2000)
+    }
+    // get result for the first time
+    getResults()
 
+    const interval = setInterval(getResults, 2000)
     return () => clearInterval(interval)
   }, [])
 
