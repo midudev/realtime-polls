@@ -4,8 +4,9 @@
   "description": "Code for realtime polls",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
     "build": "next build",
+    "dev": "next",
+    "lint": "standard --parser babel-eslint",
     "start": "next start"
   },
   "repository": {
@@ -20,8 +21,20 @@
   },
   "homepage": "https://github.com/midudev/realtime-polls#readme",
   "dependencies": {
+    "nanoid": "^2.1.3",
     "next": "9.1.1",
     "react": "16.10.2",
     "react-dom": "16.10.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.0.3",
+    "standard": "14.3.1"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "standard",
+      "standard-jsx"
+    ]
   }
 }
