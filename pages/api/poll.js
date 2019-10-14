@@ -30,10 +30,10 @@ export default (req, res) => {
       return res.status(400).json({ STATUS: 'Incorrect poll' })
     }
 
-    const hasUserAlreadyVoted = voters.includes(userIdFromCookie)
-    if (hasUserAlreadyVoted) {
-      return res.status(400).json({ STATUS: 'Already voted' })
-    }
+    // const hasUserAlreadyVoted = voters.includes(userIdFromCookie)
+    // if (hasUserAlreadyVoted) {
+    //   return res.status(400).json({ STATUS: 'Already voted' })
+    // }
 
     const answerVoted = typeof votes[answer] !== 'undefined' ? votes[answer]++ : false
 
