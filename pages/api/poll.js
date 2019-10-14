@@ -1,10 +1,15 @@
+const Cors = require('micro-cors')
 const nanoid = require('nanoid')
+
+const cors = Cors({
+  allowedMethods: ['GET', 'HEAD', 'POST', 'OPTIONS']
+})
 
 const voters = []
 const votes = { react: 0, vue: 0, angular: 0, other: 0 }
 const POLLS = ['holyjs']
 
-export default (req, res) => {
+function endpoint (req, res) {
   if (req.method === 'GET') {
     const totalVotes = Object.values(votes).reduce((prev, num) => prev + num)
     const percentatge = Object.keys(votes).reduce((percentatges, answer) => {
@@ -46,3 +51,5 @@ export default (req, res) => {
     res.json({ STATUS: 'OK' }) // send the response
   }
 }
+
+export default cors(endpoint)
