@@ -25,6 +25,7 @@ function endpoint (req, res) {
 
   if (req.method === 'POST') {
     const userId = nanoid()
+
     const { _vt: userIdFromCookie } = req.cookies
     const { poll, answer } = req.body
 
@@ -33,6 +34,7 @@ function endpoint (req, res) {
       return res.status(400).json({ STATUS: 'Incorrect poll' })
     }
 
+    // TODO: Remember to activate this!!!!
     // const hasUserAlreadyVoted = voters.includes(userIdFromCookie)
     // if (hasUserAlreadyVoted) {
     //   return res.status(400).json({ STATUS: 'Already voted' })
