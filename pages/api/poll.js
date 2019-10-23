@@ -49,7 +49,7 @@ function endpoint (req, res) {
     return res.status(200).json({ STATUS: 'OK' }) // send the response
   }
 
-  return res.status(200).send()
+  return res.status(200).send('')
 }
 
 export default cors(endpoint)
