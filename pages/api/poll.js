@@ -1,9 +1,7 @@
 import Cors from 'micro-cors'
 import nanoid from 'nanoid'
 
-const cors = Cors({
-  allowMethods: ['GET', 'HEAD', 'POST', 'OPTIONS']
-})
+const cors = Cors()
 
 const voters = []
 const votes = { react: 0, vue: 0, angular: 0, other: 0 }
