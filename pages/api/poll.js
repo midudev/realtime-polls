@@ -16,7 +16,7 @@ function endpoint (req, res) {
       return percentatges
     }, {})
 
-    res.json({
+    return res.json({
       raw: votes,
       percentatge,
       totalVotes
@@ -46,8 +46,10 @@ function endpoint (req, res) {
 
     voters.push(userId) // save voter
     res.setHeader('Set-Cookie', `_vt=${userId}`) // store the cookie
-    res.json({ STATUS: 'OK' }) // send the response
+    return res.json({ STATUS: 'OK' }) // send the response
   }
+
+  return res.json()
 }
 
 export default cors(endpoint)
