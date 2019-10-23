@@ -1,8 +1,8 @@
-const Cors = require('micro-cors')
-const nanoid = require('nanoid')
+import Cors from 'micro-cors'
+import nanoid from 'nanoid'
 
 const cors = Cors({
-  allowedMethods: ['GET', 'HEAD', 'POST', 'OPTIONS']
+  allowMethods: ['GET', 'HEAD', 'POST', 'OPTIONS']
 })
 
 const voters = []
